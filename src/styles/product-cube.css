@@ -1,0 +1,287 @@
+/* ========================================
+   Product Cube Component
+   ======================================== */
+
+.product-cube {
+  position: relative;
+  width: 100%;
+  min-width: 340px;
+  max-width: 380px;
+  aspect-ratio: 1 / 1.4;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center;
+}
+
+.product-cube__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 22px;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), rgba(15, 23, 42, 0.95));
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+/* Light theme cube - dark blue/purple gradient with high contrast */
+[data-theme="light"] .product-cube__inner {
+  background: linear-gradient(135deg, #1e3a8a 0%, #4c1d95 100%);
+  border: 1px solid rgba(30, 58, 138, 0.5);
+}
+
+.product-cube__glow {
+  position: absolute;
+  inset: -60%;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.3), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* Light theme glow */
+[data-theme="light"] .product-cube__glow {
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.25), transparent 65%);
+}
+
+.product-cube__border {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Badge */
+.product-cube__badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #22d3ee, #a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 16px;
+  color: #020617;
+  box-shadow: 0 8px 24px rgba(34, 211, 238, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* Light theme badge */
+[data-theme="light"] .product-cube__badge {
+  background: linear-gradient(135deg, #0ea5e9, #7c3aed);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.4);
+}
+
+/* Title */
+.product-cube__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f9fafb;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Light theme title - white on dark background */
+[data-theme="light"] .product-cube__title {
+  color: #ffffff;
+}
+
+/* Tagline */
+.product-cube__tagline {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #9ca3af;
+  margin: 0;
+  flex: 1;
+}
+
+/* Light theme tagline - light gray on dark background */
+[data-theme="light"] .product-cube__tagline {
+  color: #e0e7ff;
+}
+
+/* Image */
+.product-cube__image-wrap {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.8);
+  margin-top: auto;
+}
+
+.product-cube__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 0.3s ease;
+}
+
+/* KPI Section */
+.product-cube__kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.product-cube__kpi-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.product-cube__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.product-cube__bar {
+  height: 4px;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.product-cube__bar--primary {
+  width: 100%;
+  background: linear-gradient(90deg, #22d3ee, #a855f7);
+  box-shadow: 0 2px 8px rgba(34, 211, 238, 0.4);
+}
+
+.product-cube__bar--secondary {
+  width: 60%;
+  background: linear-gradient(90deg, #a855f7, #fb7185);
+  box-shadow: 0 2px 8px rgba(168, 85, 247, 0.4);
+}
+
+/* States */
+
+/* Default state */
+.product-cube--default {
+  transform: scale(0.96);
+}
+
+.product-cube--default .product-cube__inner {
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+/* Hover state */
+.product-cube--hover,
+.product-cube:hover {
+  transform: scale(1) translateY(-4px);
+}
+
+.product-cube--hover .product-cube__inner,
+.product-cube:hover .product-cube__inner {
+  border-color: rgba(34, 211, 238, 0.6);
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), rgba(15, 23, 42, 0.98));
+}
+
+.product-cube--hover .product-cube__glow,
+.product-cube:hover .product-cube__glow {
+  opacity: 0.6;
+}
+
+.product-cube--hover .product-cube__badge,
+.product-cube:hover .product-cube__badge {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(34, 211, 238, 0.6);
+}
+
+.product-cube--hover .product-cube__image,
+.product-cube:hover .product-cube__image {
+  transform: scale(1.05);
+}
+
+.product-cube--hover .product-cube__border,
+.product-cube:hover .product-cube__border {
+  border-color: rgba(34, 211, 238, 0.4);
+}
+
+/* Active state */
+.product-cube--active {
+  transform: scale(1.05) translateY(-8px);
+}
+
+.product-cube--active .product-cube__inner {
+  border-color: rgba(34, 211, 238, 0.9);
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.35), rgba(15, 23, 42, 1));
+  box-shadow: 0 20px 60px rgba(34, 211, 238, 0.5);
+}
+
+.product-cube--active .product-cube__glow {
+  opacity: 1;
+}
+
+.product-cube--active .product-cube__badge {
+  transform: scale(1.15);
+  box-shadow: 0 16px 40px rgba(34, 211, 238, 0.8);
+}
+
+.product-cube--active .product-cube__border {
+  border-color: #22d3ee;
+  box-shadow: 
+    0 0 20px rgba(34, 211, 238, 0.6),
+    inset 0 0 20px rgba(34, 211, 238, 0.2);
+}
+
+.product-cube--active .product-cube__bar--primary {
+  width: 100%;
+  box-shadow: 0 2px 16px rgba(34, 211, 238, 0.8);
+}
+
+.product-cube--active .product-cube__bar--secondary {
+  width: 80%;
+  box-shadow: 0 2px 16px rgba(168, 85, 247, 0.8);
+}
+
+/* Hand hover effect */
+.product-cube.hand-hover {
+  transform: scale(1.02) translateY(-4px);
+}
+
+.product-cube.hand-hover .product-cube__inner {
+  border-color: rgba(34, 211, 238, 0.7);
+}
+
+.product-cube.hand-hover .product-cube__glow {
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .product-cube__inner {
+    padding: 16px;
+  }
+  
+  .product-cube__badge {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .product-cube__title {
+    font-size: 16px;
+  }
+  
+  .product-cube__image-wrap {
+    height: 70px;
+  }
+}

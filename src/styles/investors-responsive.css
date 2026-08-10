@@ -1,0 +1,250 @@
+/* ========================================
+   Investors Hub - Responsive Styles
+   ======================================== */
+
+/* DEFAULT - Desktop */
+.inv-hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.inv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.inv-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.inv-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ============================================
+   TABLET (max-width: 1024px)
+   ============================================ */
+@media (max-width: 1024px) {
+  .inv-hero {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .inv-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 20px !important;
+  }
+}
+
+/* ============================================
+   MOBILE (max-width: 768px)
+   ============================================ */
+@media (max-width: 768px) {
+  .inv-hero {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Single column grid for cards */
+  .inv-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Card padding - reduce significantly */
+  .inv-hero .card {
+    padding: 20px !important;
+  }
+
+  .inv-grid .card {
+    padding: 18px !important;
+  }
+
+  /* Search bar and select - stack vertically */
+  .inv-hero input.search,
+  .inv-hero select.search {
+    width: 100% !important;
+    min-width: 100% !important;
+    flex: 1 1 100% !important;
+    font-size: 14px !important;
+    padding: 10px !important;
+  }
+
+  /* Buttons - full width on mobile */
+  .inv-buttons {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .inv-buttons a,
+  .inv-buttons button {
+    width: 100% !important;
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+  }
+
+  /* Modal adjustments */
+  .inv-modal-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Smaller headings */
+  .inv-hero h1 {
+    font-size: 1.6rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .inv-hero h3 {
+    font-size: 1.1rem !important;
+  }
+
+  .inv-hero p.lead {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+
+  .inv-grid h3 {
+    font-size: 1.05rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .inv-grid p {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Tags smaller */
+  .inv-grid .card span {
+    font-size: 9px !important;
+    padding: 2px 6px !important;
+  }
+
+  /* KPI Grid - 2 columns on mobile for better fit */
+  .kpi-grid-mobile {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  .kpi-grid-mobile > div {
+    padding: 8px !important;
+  }
+
+  .kpi-grid-mobile .kpi-label {
+    font-size: 9px !important;
+  }
+
+  .kpi-grid-mobile .kpi-value {
+    font-size: 16px !important;
+  }
+
+  /* Amount section */
+  .amount-section label {
+    font-size: 12px !important;
+  }
+
+  .amount-display {
+    font-size: 18px !important;
+  }
+
+  /* Preview buttons */
+  .preview-card {
+    padding: 10px !important;
+  }
+
+  .preview-card .preview-title {
+    font-size: 12px !important;
+  }
+
+  .preview-card .preview-subtitle {
+    font-size: 10px !important;
+  }
+
+  .preview-card button {
+    font-size: 12px !important;
+    padding: 6px 10px !important;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE (max-width: 480px)
+   ============================================ */
+@media (max-width: 480px) {
+  .inv-hero .card {
+    padding: 16px !important;
+  }
+
+  .inv-grid .card {
+    padding: 16px !important;
+  }
+
+  .inv-hero h1 {
+    font-size: 1.4rem !important;
+  }
+
+  .inv-hero p.lead {
+    font-size: 14px !important;
+  }
+
+  .inv-grid h3 {
+    font-size: 1rem !important;
+  }
+
+  .inv-grid p {
+    font-size: 11px !important;
+  }
+
+  /* KPI Grid - stack 2x2 on very small screens */
+  .kpi-grid-mobile .kpi-label {
+    font-size: 8px !important;
+  }
+
+  .kpi-grid-mobile .kpi-value {
+    font-size: 14px !important;
+  }
+
+  .amount-display {
+    font-size: 16px !important;
+  }
+
+  .inv-buttons a,
+  .inv-buttons button {
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* ============================================
+   EXTRA SMALL MOBILE (max-width: 360px)
+   ============================================ */
+@media (max-width: 360px) {
+  .inv-hero .card,
+  .inv-grid .card {
+    padding: 12px !important;
+  }
+
+  .inv-hero h1 {
+    font-size: 1.25rem !important;
+  }
+
+  .inv-grid h3 {
+    font-size: 0.95rem !important;
+  }
+
+  .kpi-grid-mobile {
+    gap: 6px !important;
+  }
+
+  .kpi-grid-mobile > div {
+    padding: 6px !important;
+  }
+}

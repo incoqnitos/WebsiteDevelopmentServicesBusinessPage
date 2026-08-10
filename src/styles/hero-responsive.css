@@ -1,0 +1,358 @@
+/* ========================================
+   Hero Section & Background Video Responsive Styles
+   ======================================== */
+
+/* DEFAULT - Desktop (100vh) */
+.bg-video-section {
+  height: 100vh;
+}
+
+.bg-video-container {
+  height: 100vh;
+}
+
+/* ============================================
+   MOBILE (0-640px) - 1 CARD SLIDER
+   ============================================ */
+@media (max-width: 640px) {
+  /* Background Video Section - RESPONSIVE (60vh on mobile) */
+  .bg-video-section {
+    height: 60vh !important;
+  }
+
+  .bg-video-container {
+    height: 60vh !important;
+  }
+
+  /* Hero Section - Cards section BELOW video */
+  #home {
+    min-height: auto !important;
+    padding: 40px 15px 80px !important;
+  }
+
+  /* Title positioning - Start of cards section */
+  #home > div > div:first-child {
+    margin-top: 0 !important; /* No extra margin, cards section starts fresh */
+  }
+
+  /* Cards container spacing */
+  #home > div > div:nth-child(2) {
+    margin-top: 30px !important;
+  }
+
+  /* Grid: Show only 1 card */
+  .hero-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* Hide all cards except the first (slider mode) */
+  .hero-cards-grid > div:not(:first-child) {
+    display: none !important;
+  }
+
+  /* Card images - FULL SIZE */
+  #home img[alt] {
+    min-height: 400px !important;
+    max-height: none !important;
+  }
+
+  /* Mobile nav container - show below cards */
+  .hero-mobile-nav {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    margin-top: 24px !important;
+    position: relative !important;
+  }
+
+  /* Navigation buttons - reset to relative positioning for mobile */
+  .hero-mobile-nav .hero-nav-btn {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .hero-mobile-nav .hero-nav-btn:hover {
+    transform: scale(1.1) !important;
+  }
+
+  /* Action buttons - NORMAL SIZE */
+  #home div[style*="display: flex"][style*="gap: 8px"] button {
+    font-size: 14px !important;
+    padding: 10px 16px !important;
+  }
+
+  /* Decorative line */
+  #home div[style*="height: 3px"] {
+    max-width: 200px !important;
+  }
+
+  /* Progress indicators */
+  #home > div > div:last-child {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 24px !important;
+  }
+}
+
+/* Extra Small Mobile (max 400px) */
+@media (max-width: 400px) {
+  /* Smaller video for tiny screens */
+  .bg-video-section {
+    height: 50vh !important;
+  }
+
+  .bg-video-container {
+    height: 50vh !important;
+  }
+
+  #home {
+    padding: 30px 12px 70px !important;
+  }
+
+  /* Title - slightly smaller */
+  #home h1 span {
+    font-size: 1.75rem !important;
+    letter-spacing: 2px !important;
+  }
+
+  /* Card images - KEEP FULL SIZE */
+  #home img[alt] {
+    min-height: 380px !important;
+    max-height: none !important;
+  }
+
+  /* Nav buttons */
+  .hero-nav-btn {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  /* Action buttons */
+  #home div[style*="display: flex"][style*="gap: 8px"] button {
+    font-size: 13px !important;
+    padding: 9px 14px !important;
+  }
+
+  /* Progress indicators */
+  #home > div > div:last-child > div {
+    width: 10px !important;
+    height: 10px !important;
+  }
+}
+
+/* ============================================
+   TABLET (641px - 1024px) - 2 COLUMNS
+   ============================================ */
+@media (min-width: 641px) {
+  /* Background Video - Tablet (80vh) */
+  .bg-video-section {
+    height: 80vh !important;
+  }
+
+  .bg-video-container {
+    height: 80vh !important;
+  }
+
+  /* Cards Section */
+  #home {
+    min-height: auto !important;
+    padding: 50px 20px 120px !important;
+  }
+
+  #home > div > div:first-child {
+    margin-top: 0 !important;
+  }
+
+  #home > div > div:nth-child(2) {
+    margin-top: 50px !important;
+    display: block !important;
+  }
+
+  /* Grid: 2 columns */
+  .hero-cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  /* Show all cards */
+  .hero-cards-grid > div {
+    display: flex !important;
+  }
+
+  /* Card images */
+  #home img[alt] {
+    min-height: 350px !important;
+    max-height: none !important;
+  }
+
+  /* Navigation buttons - absolute positioned */
+  .hero-nav-btn {
+    position: absolute !important;
+    width: 50px !important;
+    height: 50px !important;
+    top: 50% !important;
+  }
+
+  .hero-nav-prev {
+    left: -10px !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .hero-nav-next {
+    right: -10px !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .hero-nav-btn:hover {
+    transform: translateY(-50%) scale(1.1) !important;
+  }
+
+  /* Action buttons */
+  #home div[style*="display: flex"][style*="gap: 8px"] button {
+    font-size: 13px !important;
+    padding: 9px 14px !important;
+  }
+
+  /* Decorative line */
+  #home div[style*="height: 3px"] {
+    max-width: 250px !important;
+  }
+}
+
+/* ============================================
+   DESKTOP SMALL (1025px - 1280px) - 3 COLUMNS
+   ============================================ */
+@media (min-width: 1025px) {
+  /* Background Video - Full Desktop */
+  .bg-video-section {
+    height: 100vh !important;
+  }
+
+  .bg-video-container {
+    height: 100vh !important;
+  }
+
+  /* Cards Section */
+  #home {
+    min-height: auto !important;
+    padding: 60px 20px 150px !important;
+  }
+
+  #home > div > div:first-child {
+    margin-top: 0 !important;
+  }
+
+  #home > div > div:nth-child(2) {
+    margin-top: 60px !important;
+  }
+
+  /* Grid: 3 columns */
+  .hero-cards-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px !important;
+  }
+
+  /* Card images */
+  #home img[alt] {
+    min-height: 380px !important;
+  }
+
+  /* Navigation buttons */
+  .hero-nav-prev {
+    left: -40px !important;
+  }
+
+  .hero-nav-next {
+    right: -40px !important;
+  }
+
+  /* Action buttons */
+  #home div[style*="display: flex"][style*="gap: 8px"] button {
+    font-size: 14px !important;
+    padding: 10px 16px !important;
+  }
+
+  /* Decorative line */
+  #home div[style*="height: 3px"] {
+    max-width: 280px !important;
+  }
+}
+
+/* ============================================
+   DESKTOP LARGE (1281px+) - 4 COLUMNS (DEFAULT)
+   ============================================ */
+@media (min-width: 1281px) {
+  /* Background Video - Large Desktop */
+  .bg-video-section {
+    height: 100vh !important;
+  }
+
+  .bg-video-container {
+    height: 100vh !important;
+  }
+
+  /* Cards Section */
+  #home {
+    min-height: auto !important;
+    padding: 80px 20px 200px !important;
+  }
+
+  #home > div > div:first-child {
+    margin-top: 0 !important;
+  }
+
+  #home > div > div:nth-child(2) {
+    margin-top: 70px !important;
+  }
+
+  /* Grid: 4 columns (original design) */
+  .hero-cards-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 30px !important;
+  }
+
+  /* Card images */
+  #home img[alt] {
+    min-height: 400px !important;
+  }
+
+  /* Navigation buttons - full offset */
+  .hero-nav-prev {
+    left: -60px !important;
+  }
+
+  .hero-nav-next {
+    right: -60px !important;
+  }
+
+  /* Decorative line */
+  #home div[style*="height: 3px"] {
+    max-width: 300px !important;
+  }
+}
+
+/* ============================================
+   VIDEO RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+/* Reduce gradient overlays on mobile to save space */
+@media (max-width: 640px) {
+  .bg-video-container > div[style*="height: 400px"] {
+    height: 200px !important;
+  }
+
+  .bg-video-container > div[style*="height: 150px"] {
+    height: 100px !important;
+  }
+
+  .bg-video-container > div[style*="width: 200px"] {
+    width: 100px !important;
+    height: 40px !important;
+  }
+}
