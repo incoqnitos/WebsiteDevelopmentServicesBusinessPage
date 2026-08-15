@@ -118,17 +118,17 @@ export default function ImpressumPage() {
   const isDark = true; // Dark theme only
 
   const companyInfo = [
-    { icon: Building, label: t.companyName, value: 'MITAI LTD (MIT 1985 LTD)' },
+    { icon: Building, label: t.companyName, value: 'Mobile Intelligence Technologies 1985 Ltd (MIT AI 1985 LTD)' },
     { icon: Hash, label: t.registrationNumber, value: '200063629' },
     { icon: Hash, label: t.vatCode, value: 'BG200063629' },
-    { icon: MapPin, label: t.address, value: 'Perustica 19, 8000 Burgas, Bulgaria' },
+    { icon: MapPin, label: t.address, value: 'Schönauer Straße 6, 68307 Mannheim, Germany' },
     { icon: User, label: t.ceo, value: 'Dimitar Konstantinov Totev' },
-    { icon: Mail, label: t.contactEmail, value: 'info@mobileintellect.com' },
+    { icon: Mail, label: t.contactEmail, value: 'contact@mitai.de' },
   ];
 
   const offices = [
-    { city: 'Burgas', country: 'Bulgaria', type: t.headquarters },
-    { city: 'Mannheim', country: 'Germany', type: t.hybridBureau },
+    { city: 'Mannheim', country: 'Germany', type: t.headquarters },
+    { city: 'Burgas', country: 'Bulgaria', type: t.hybridBureau },
     { city: 'London', country: 'United Kingdom', type: t.hybridBureau },
     { city: 'Silicon Valley', country: 'USA', type: t.hybridBureau },
   ];

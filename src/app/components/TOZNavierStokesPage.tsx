@@ -50,7 +50,7 @@ export default function TOZNavierStokesPage() {
         }}>
           {[
             ['Author', 'Dimitar Konstantinov Totev'],
-            ['Organisation', 'MIT1985 LTD'],
+            ['Organisation', 'Mobile Intelligence Technologies 1985 Ltd (MIT AI 1985)'],
             ['Year', '2025'],
             ['Status', 'Theoretical Framework'],
           ].map(([k, v]) => (
@@ -755,7 +755,7 @@ export default function TOZNavierStokesPage() {
             </p>
             <p style={{ color: '#64748b', fontSize: 13, margin: 0 }}>
               Patent Pending: BG-2025-TOZ-NAVIER-STOKES-001 ·
-              MIT1985 LTD · lloyd.totev@gmail.com · mobileintelect.com
+              Mobile Intelligence Technologies 1985 Ltd · contact@mitai.de · mitai.de
             </p>
           </div>
         </Section>

@@ -7,20 +7,30 @@ const translations = {
   en: {
     heroTitle: 'About MITAI',
     heroSubtitle: 'Mobile Intelligence Technologies 1985 LTD',
-    storyTitle: 'Our Story',
-    storyP1: 'MITAI (Mobile Intelligence Technologies 1985 LTD) was founded in 2005. Since then, we\'ve developed innovative solutions that push the boundaries of artificial intelligence and robotics.',
-    storyP2: 'Our flagship products include Transcendify – advanced financial markets software; Winex – a revolutionary fintech leasing platform; and Arhont-1 – an AI operating system powering our next-generation laptops.',
-    storyP3: 'In 2024, we began our journey into humanoid robot integration, marking a new era for MITAI. In 2026, we will unveil Diana – our first humanoid robot featuring realistic human movements and advanced AI capabilities.',
-    storyP4: 'Our proprietary Retina AI and cutting-edge LLM (Large Language Model) technology make MITAI a global leader in integrated AI ecosystems.',
-    leadershipTitle: 'Leadership',
-    leadershipSubtitle: 'Meet the visionary behind MITAI',
+    storyTitle: 'About Us',
+    storyP1: 'Mobile Intelligence Technologies (MIT 1985 LTD) is a forward-thinking technology enterprise specializing in high-tier software architecture, artificial intelligence (AI), and advanced mobile computing solutions.',
+    storyP2: 'Founded and driven by software architect, scientist, and tech visionary Dimitar Konstantinov Totev, the company bridges the gap between academic AI legacy and modern enterprise automation. Inspired by the pioneering spirit of autonomous machine learning that shaped the industry since 1985, MIT 1985 LTD delivers scalable, robust software infrastructures designed for the complexities of the digital era.',
+    storyP3: 'Our flagship products include Transcendify — advanced FinTech and financial markets software; Winnex — a revolutionary leasing platform; Digital Doctor — an AI-assisted clinical decision support ecosystem; and the MIT AI LLM, a 560-billion-parameter large language model with 16-bit quantisation.',
+    storyP4: 'In 2024 we began integration of humanoid robotic systems. In 2026 we will unveil Diana — our first humanoid robot with realistic human movement and advanced AI capabilities. Our proprietary S Arhont OS and TROK OS research make MITAI a recognised innovator in AI-native operating system architecture.',
+    leadershipTitle: 'About the Founder',
+    leadershipSubtitle: 'Software Architect · Scientist · Tech Visionary',
     ceoName: 'Dimitar Konstantinov Totev',
-    ceoTitle: 'Founder & CEO',
-    founded: 'Founded 2005',
+    ceoTitle: 'Founder & CEO — MIT 1985 LTD',
+    ceoDesc: 'Dimitar Totev is an experienced software architect and technological visionary with a strong track record of engineering complex systems across Germany, Switzerland, and Bulgaria. Combining scientific methodology with entrepreneurial leadership, he serves as the CEO and principal architect of MIT 1985. His focus lies in deploying cognitive automation, advanced system design, and intelligence architectures that empower businesses to scale globally. Author of 3 books and 60+ scientific publications across AI, mathematics, digital health, blockchain and robotics. Creator of the MIT AI LLM (560B parameters).',
+    corpTitle: 'Corporate Structure & Legitimacy',
+    corpEntity: 'Legal Entity',
+    corpEntityVal: 'MIT 1985 E00D (Private Limited Company)',
+    corpUic: 'Unified Identification Code (UIC / ЕИК)',
+    corpUicVal: '200063629',
+    corpVat: 'VAT',
+    corpVatVal: 'BG200063629',
+    corpExpertise: 'Areas of Expertise',
+    corpExpertiseVal: 'Enterprise Software Engineering · Distributed Systems · AI Integration · Mobile Intelligence',
+    founded: 'Founded 1985',
     international: 'International',
     aiPioneer: 'AI Pioneer',
     contactTitle: 'Get in Touch',
-    contactSubtitle: 'Let\'s discuss how MITAI can help your business',
+    contactSubtitle: "Let's discuss how MITAI can help your business",
     name: 'Name',
     email: 'Email',
     phone: 'Phone',
@@ -32,16 +42,26 @@ const translations = {
   bg: {
     heroTitle: 'За MITAI',
     heroSubtitle: 'Mobile Intelligence Technologies 1985 LTD',
-    storyTitle: 'Нашата История',
-    storyP1: 'MITAI (Mobile Intelligence Technologies 1985 LTD) бе основана през 2005 г. Оттогава разработихме иновативни решения, които раздвижват границите на изкуствения интелект и роботиката.',
-    storyP2: 'Нашите водещи продукти включват Transcendify – напреднал софтуер за финансови пазари; Winex – революционна финтех лизингова платформа; и Arhont-1 – AI операционна система за нашите лаптопи от ново поколение.',
-    storyP3: 'През 2024 г. започнахме нашето пътуване към интеграция на хуманоидни роботи, отбелязвайки нова ера за MITAI. През 2026 г. ще представим Diana – нашия първи хуманоиден робот с реалистични човешки движения и усъвършенствани AI възможности.',
-    storyP4: 'Нашата собствена Retina AI и най-съвременна LLM (Large Language Model) технология правят MITAI световен лидер в интегрирани AI екосистеми.',
-    leadershipTitle: 'Ръководство',
-    leadershipSubtitle: 'Запознайте се с визионера зад MITAI',
+    storyTitle: 'За нас',
+    storyP1: 'Mobile Intelligence Technologies (MIT 1985 LTD) е иновативно технологично предприятие, специализирано в висококачествена софтуерна архитектура, изкуствен интелект (AI) и усъвършенствани решения за мобилни изчисления.',
+    storyP2: 'Основана и ръководена от софтуерния архитект, учен и технологичен визионер Димитър Константинов Тотев, компанията свързва академичното AI наследство с модерната корпоративна автоматизация. MIT 1985 LTD доставя мащабируеми, стабилни софтуерни инфраструктури, проектирани за сложността на дигиталната ера.',
+    storyP3: 'Нашите водещи продукти включват Transcendify — напреднал FinTech и финансов софтуер; Winnex — революционна лизингова платформа; Digital Doctor — AI-асистирана екосистема за клинична поддръжка; и MIT AI LLM — езиков модел с 560 милиарда параметри.',
+    storyP4: 'През 2024 г. започнахме интеграция на хуманоидни роботни системи. През 2026 г. ще представим Diana — нашия първи хуманоиден робот. Нашите изследвания на S Arhont OS и TROK OS правят MITAI призната компания в архитектурата на AI-нативни операционни системи.',
+    leadershipTitle: 'За основателя',
+    leadershipSubtitle: 'Софтуерен архитект · Учен · Технологичен визионер',
     ceoName: 'Димитър Константинов Тотев',
-    ceoTitle: 'Основател и Главен Изпълнителен Директор',
-    founded: 'Основана 2005',
+    ceoTitle: 'Основател и Главен Изпълнителен Директор — MIT 1985 LTD',
+    ceoDesc: 'Димитър Тотев е опитен софтуерен архитект и технологичен визионер с доказан опит в инженерирането на сложни системи в Германия, Швейцария и България. Съчетавайки научна методология с предприемаческо лидерство, той е CEO и главен архитект на MIT 1985. Автор на 3 книги и 60+ научни публикации в областта на AI, математика, дигитално здравеопазване, блокчейн и роботика. Създател на MIT AI LLM (560B параметри).',
+    corpTitle: 'Корпоративна структура',
+    corpEntity: 'Правна форма',
+    corpEntityVal: 'MIT 1985 ЕООД (Дружество с ограничена отговорност)',
+    corpUic: 'ЕИК / UIC',
+    corpUicVal: '200063629',
+    corpVat: 'ДДС номер',
+    corpVatVal: 'BG200063629',
+    corpExpertise: 'Области на дейност',
+    corpExpertiseVal: 'Корпоративен софтуер · Разпределени системи · AI интеграция · Мобилни интелигентни решения',
+    founded: 'Основана 1985',
     international: 'Международна',
     aiPioneer: 'AI Пионер',
     contactTitle: 'Свържете се с нас',
@@ -57,16 +77,26 @@ const translations = {
   de: {
     heroTitle: 'Über MITAI',
     heroSubtitle: 'Mobile Intelligence Technologies 1985 LTD',
-    storyTitle: 'Unsere Geschichte',
-    storyP1: 'MITAI (Mobile Intelligence Technologies 1985 LTD) wurde 2005 gegründet. Seitdem haben wir innovative Lösungen entwickelt, die die Grenzen der künstlichen Intelligenz und Robotik erweitern.',
-    storyP2: 'Unsere Flaggschiff-Produkte umfassen Transcendify – fortschrittliche Finanzmarkt-Software; Winex – eine revolutionäre Fintech-Leasing-Plattform; und Arhont-1 – ein KI-Betriebssystem für unsere Laptops der nächsten Generation.',
-    storyP3: 'Im Jahr 2024 begannen wir unsere Reise zur Integration humanoider Roboter und läuteten damit eine neue Ära für MITAI ein. Im Jahr 2026 werden wir Diana vorstellen – unseren ersten humanoiden Roboter mit realistischen menschlichen Bewegungen und fortschrittlichen KI-Fähigkeiten.',
-    storyP4: 'Unsere proprietäre Retina AI und modernste LLM (Large Language Model) Technologie machen MITAI zu einem globalen Marktführer in integrierten KI-Ökosystemen.',
-    leadershipTitle: 'Führung',
-    leadershipSubtitle: 'Lernen Sie den Visionär hinter MITAI kennen',
+    storyTitle: 'Über uns',
+    storyP1: 'Mobile Intelligence Technologies (MIT 1985 LTD) ist ein zukunftsorientiertes Technologieunternehmen, spezialisiert auf hochwertige Softwarearchitektur, künstliche Intelligenz (KI) und fortschrittliche mobile Computing-Lösungen.',
+    storyP2: 'Gegründet und geleitet vom Softwarearchitekten, Wissenschaftler und Tech-Visionär Dimitar Konstantinov Totev, überbrückt das Unternehmen die Lücke zwischen akademischem KI-Erbe und moderner Unternehmensautomatisierung. MIT 1985 LTD liefert skalierbare, robuste Softwareinfrastrukturen für die Komplexität des digitalen Zeitalters.',
+    storyP3: 'Unsere Flaggschiff-Produkte: Transcendify — fortschrittliche FinTech-Software; Winnex — eine revolutionäre Leasing-Plattform; Digital Doctor — ein KI-gestütztes klinisches Entscheidungssystem; und das MIT AI LLM — ein Sprachmodell mit 560 Milliarden Parametern.',
+    storyP4: 'Im Jahr 2024 begannen wir mit der Integration humanoider Robotersysteme. 2026 stellen wir Diana vor — unseren ersten humanoiden Roboter. Unsere S-Arhont-OS- und TROK-OS-Forschung macht MITAI zu einem anerkannten Innovator in der KI-nativen Betriebssystemarchitektur.',
+    leadershipTitle: 'Über den Gründer',
+    leadershipSubtitle: 'Softwarearchitekt · Wissenschaftler · Tech-Visionär',
     ceoName: 'Dimitar Konstantinov Totev',
-    ceoTitle: 'Gründer & CEO',
-    founded: 'Gegründet 2005',
+    ceoTitle: 'Gründer & CEO — MIT 1985 LTD',
+    ceoDesc: 'Dimitar Totev ist ein erfahrener Softwarearchitekt und technologischer Visionär mit nachgewiesener Erfolgsbilanz bei der Entwicklung komplexer Systeme in Deutschland, der Schweiz und Bulgarien. Er verbindet wissenschaftliche Methodik mit unternehmerischer Führung als CEO und Chefarchitekt von MIT 1985. Autor von 3 Büchern und 60+ wissenschaftlichen Publikationen in den Bereichen KI, Mathematik, digitale Gesundheit, Blockchain und Robotik. Entwickler des MIT AI LLM (560B Parameter).',
+    corpTitle: 'Unternehmensstruktur & Legitimität',
+    corpEntity: 'Rechtsform',
+    corpEntityVal: 'MIT 1985 E00D (Gesellschaft mit beschränkter Haftung)',
+    corpUic: 'Handelsregisternummer (UIC / ЕИК)',
+    corpUicVal: '200063629',
+    corpVat: 'USt-IdNr.',
+    corpVatVal: 'BG200063629',
+    corpExpertise: 'Fachgebiete',
+    corpExpertiseVal: 'Enterprise-Softwareentwicklung · Verteilte Systeme · KI-Integration · Mobile Intelligence',
+    founded: 'Gegründet 1985',
     international: 'International',
     aiPioneer: 'KI-Pionier',
     contactTitle: 'Kontaktieren Sie uns',
@@ -307,9 +337,9 @@ export default function AboutPage() {
                       opacity: 0.3
                     }}
                   ></div>
-                  <img 
-                    src={profilePhoto} 
-                    alt="Dimitar Konstantinov Totev"
+                  <img
+                    src={profilePhoto}
+                    alt="Dimitar Totev - Software Architect and Visionary, CEO of MIT 1985 — Mobile Intelligence Technologies, Mannheim Germany"
                     className="relative w-56 h-72 object-cover object-top rounded-2xl shadow-2xl border-2 border-cyan-500/50"
                   />
                 </div>
@@ -377,25 +407,71 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div 
+                <p
+                  className="text-sm leading-relaxed mb-5"
+                  style={{ color: isDark ? 'rgb(148, 163, 184)' : 'rgb(71, 85, 105)' }}
+                >
+                  {t.ceoDesc}
+                </p>
+
+                <div
                   className="grid grid-cols-2 gap-4 text-sm"
                   style={{ color: isDark ? 'rgb(203, 213, 225)' : 'rgb(51, 65, 85)' }}
                 >
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4 text-cyan-400" />
-                    <span>+49 17642437096</span>
+                    <span>+49 176 42437096</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="w-4 h-4 text-cyan-400" />
-                    <span>lloyd.totev@gmail.com</span>
+                    <span>contact@mitai.de</span>
                   </div>
                   <div className="flex items-center gap-2 col-span-2">
                     <MapPin className="w-4 h-4 text-cyan-400" />
-                    <span>{t.mannheim}</span>
+                    <span>Schönauer Straße 6, 68307 Mannheim, Germany</span>
                   </div>
                 </div>
               </div>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Corporate Structure Section */}
+      <section className="py-12 px-6">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="rounded-2xl p-8"
+            style={{
+              background: isDark ? 'rgba(15, 23, 42, 0.5)' : 'rgba(255, 255, 255, 0.7)',
+              backdropFilter: 'blur(20px)',
+              border: isDark ? '1px solid rgba(6, 182, 212, 0.2)' : '1px solid rgba(6, 182, 212, 0.3)',
+              boxShadow: isDark ? '0 4px 24px rgba(6, 182, 212, 0.1)' : '0 4px 24px rgba(6, 182, 212, 0.15)'
+            }}
+          >
+            <h2
+              className="text-2xl font-bold mb-6"
+              style={{ color: isDark ? 'white' : 'rgb(15, 23, 42)' }}
+            >
+              {t.corpTitle}
+            </h2>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
+              {[
+                [t.corpEntity, t.corpEntityVal],
+                [t.corpUic, t.corpUicVal],
+                [t.corpVat, t.corpVatVal],
+                [t.corpExpertise, t.corpExpertiseVal],
+              ].map(([label, value]) => (
+                <tr key={label} style={{ borderBottom: '1px solid rgba(6,182,212,0.1)' }}>
+                  <td style={{ color: isDark ? 'rgb(100,116,139)' : 'rgb(100,116,139)', padding: '10px 0', width: '260px', verticalAlign: 'top' }}>{label}</td>
+                  <td style={{ color: isDark ? 'rgb(203,213,225)' : 'rgb(30,41,59)', padding: '10px 0', fontWeight: 500 }}>{value}</td>
+                </tr>
+              ))}
+            </table>
           </motion.div>
         </div>
       </section>

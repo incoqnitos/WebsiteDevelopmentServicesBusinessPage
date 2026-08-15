@@ -24,6 +24,8 @@ const PAGES = [
   { path: '#publications', priority: '0.6', changefreq: 'weekly' },
   { path: '#client-portal', priority: '0.5', changefreq: 'monthly' },
   { path: '#investors', priority: '0.6', changefreq: 'monthly' },
+  { path: 'dimitar-totev.html', priority: '0.9', changefreq: 'monthly' },
+  { path: 'mit-ai-company.html', priority: '0.9', changefreq: 'monthly' },
 ];
 
 function seoPlugin(): Plugin {

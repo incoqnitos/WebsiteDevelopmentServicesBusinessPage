@@ -1,8 +1,14 @@
 import { useState, useEffect } from 'react';
-import { projectId, publicAnonKey } from '/utils/supabase/info';
 import { LogIn, LogOut, MessageSquare, Calendar, Trash2, CheckCircle, Clock, XCircle, RefreshCw, Mail, Phone, User, Briefcase, Eye, EyeOff } from 'lucide-react';
 
-const API = `https://${projectId}.supabase.co/functions/v1/make-server-d0a1053e`;
+const ADMIN_PASSWORD = 'mitai2024admin';
+
+function lsGet(key: string) {
+  try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch { return []; }
+}
+function lsSet(key: string, data: unknown[]) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
 
 type Message = { id: string; name: string; email: string; phone: string; subject: string; message: string; status: string; createdAt: string };
 type Booking = { id: string; name: string; email: string; phone: string; service: string; date: string; time: string; notes: string; status: string; createdAt: string };
@@ -28,27 +34,16 @@ export default function AdminPanel() {
   const [loading, setLoading] = useState(false);
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
-  const authHeaders = { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` };
-
-  const login = async (e: React.FormEvent) => {
+  const login = (e: React.FormEvent) => {
     e.preventDefault();
     setLoginLoading(true);
     setLoginError('');
-    try {
-      const res = await fetch(`${API}/admin/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${publicAnonKey}` },
-        body: JSON.stringify({ password }),
-      });
-      const data = await res.json();
-      if (res.ok && data.token) {
-        setToken(data.token);
-        sessionStorage.setItem('mitai_admin_token', data.token);
-      } else {
-        setLoginError(data.error || 'Invalid password');
-      }
-    } catch (e) {
-      setLoginError(`Login failed: ${e}`);
+    if (password === ADMIN_PASSWORD) {
+      const t = btoa(`admin:${ADMIN_PASSWORD}:${Date.now()}`);
+      setToken(t);
+      sessionStorage.setItem('mitai_admin_token', t);
+    } else {
+      setLoginError('Invalid password');
     }
     setLoginLoading(false);
   };
@@ -58,43 +53,39 @@ export default function AdminPanel() {
     sessionStorage.removeItem('mitai_admin_token');
   };
 
-  const fetchData = async () => {
+  const fetchData = () => {
     setLoading(true);
-    try {
-      const [mRes, bRes] = await Promise.all([
-        fetch(`${API}/messages`, { headers: authHeaders }),
-        fetch(`${API}/bookings`, { headers: authHeaders }),
-      ]);
-      if (mRes.ok) setMessages(await mRes.json());
-      if (bRes.ok) setBookings(await bRes.json());
-    } catch (e) {
-      console.log('Fetch error:', e);
-    }
+    setMessages(lsGet('mitai_messages'));
+    setBookings(lsGet('mitai_bookings'));
     setLoading(false);
   };
 
   useEffect(() => { if (token) fetchData(); }, [token]);
 
-  const updateMsgStatus = async (id: string, status: string) => {
-    await fetch(`${API}/messages/${id}/status`, { method: 'PUT', headers: authHeaders, body: JSON.stringify({ status }) });
-    setMessages(prev => prev.map(m => m.id === id ? { ...m, status } : m));
+  const updateMsgStatus = (id: string, status: string) => {
+    const updated = lsGet('mitai_messages').map((m: Message) => m.id === id ? { ...m, status } : m);
+    lsSet('mitai_messages', updated);
+    setMessages(updated);
   };
 
-  const deleteMsg = async (id: string) => {
+  const deleteMsg = (id: string) => {
     if (!confirm('Delete this message?')) return;
-    await fetch(`${API}/messages/${id}`, { method: 'DELETE', headers: authHeaders });
-    setMessages(prev => prev.filter(m => m.id !== id));
+    const updated = lsGet('mitai_messages').filter((m: Message) => m.id !== id);
+    lsSet('mitai_messages', updated);
+    setMessages(updated);
   };
 
-  const updateBkgStatus = async (id: string, status: string) => {
-    await fetch(`${API}/bookings/${id}/status`, { method: 'PUT', headers: authHeaders, body: JSON.stringify({ status }) });
-    setBookings(prev => prev.map(b => b.id === id ? { ...b, status } : b));
+  const updateBkgStatus = (id: string, status: string) => {
+    const updated = lsGet('mitai_bookings').map((b: Booking) => b.id === id ? { ...b, status } : b);
+    lsSet('mitai_bookings', updated);
+    setBookings(updated);
   };
 
-  const deleteBkg = async (id: string) => {
+  const deleteBkg = (id: string) => {
     if (!confirm('Delete this booking?')) return;
-    await fetch(`${API}/bookings/${id}`, { method: 'DELETE', headers: authHeaders });
-    setBookings(prev => prev.filter(b => b.id !== id));
+    const updated = lsGet('mitai_bookings').filter((b: Booking) => b.id !== id);
+    lsSet('mitai_bookings', updated);
+    setBookings(updated);
   };
 
   const fmt = (iso: string) => new Date(iso).toLocaleString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });

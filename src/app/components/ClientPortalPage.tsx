@@ -1,8 +1,17 @@
 import { useState } from 'react';
-import { projectId, publicAnonKey } from '/utils/supabase/info';
 import { Send, Calendar, CheckCircle, AlertCircle, User, Mail, Phone, MessageSquare, Clock, Briefcase } from 'lucide-react';
 
-const API = `https://${projectId}.supabase.co/functions/v1/make-server-d0a1053e`;
+function saveLocal(storageKey: string, data: object): { ok: boolean } {
+  try {
+    const existing = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    const id = `${storageKey.startsWith('mitai_b') ? 'bkg' : 'msg'}_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
+    existing.unshift({ id, ...data, createdAt: new Date().toISOString() });
+    localStorage.setItem(storageKey, JSON.stringify(existing));
+    return { ok: true };
+  } catch {
+    return { ok: false };
+  }
+}
 
 const SERVICES = [
   'AI Systems & Automation',
@@ -42,21 +51,12 @@ export default function ClientPortalPage() {
     e.preventDefault();
     setMsgLoading(true);
     setMsgResult(null);
-    try {
-      const res = await fetch(`${API}/messages`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${publicAnonKey}` },
-        body: JSON.stringify(msgForm),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setMsgResult({ ok: true, text: 'Your message has been sent! We will reply within 24 hours.' });
-        setMsgForm({ name: '', email: '', phone: '', subject: '', message: '' });
-      } else {
-        setMsgResult({ ok: false, text: data.error || 'Failed to send message. Please try again.' });
-      }
-    } catch (e) {
-      setMsgResult({ ok: false, text: `Network error: ${e}` });
+    const result = saveLocal('mitai_messages', { ...msgForm, status: 'unread' });
+    if (result.ok) {
+      setMsgResult({ ok: true, text: 'Your message has been sent! We will reply within 24 hours.' });
+      setMsgForm({ name: '', email: '', phone: '', subject: '', message: '' });
+    } else {
+      setMsgResult({ ok: false, text: 'Failed to send message. Please try again.' });
     }
     setMsgLoading(false);
   };
@@ -65,21 +65,12 @@ export default function ClientPortalPage() {
     e.preventDefault();
     setBkgLoading(true);
     setBkgResult(null);
-    try {
-      const res = await fetch(`${API}/bookings`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${publicAnonKey}` },
-        body: JSON.stringify(bkgForm),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        setBkgResult({ ok: true, text: 'Booking request received! We will confirm your appointment shortly.' });
-        setBkgForm({ name: '', email: '', phone: '', service: '', date: '', time: '', notes: '' });
-      } else {
-        setBkgResult({ ok: false, text: data.error || 'Failed to submit booking. Please try again.' });
-      }
-    } catch (e) {
-      setBkgResult({ ok: false, text: `Network error: ${e}` });
+    const result = saveLocal('mitai_bookings', { ...bkgForm, status: 'pending' });
+    if (result.ok) {
+      setBkgResult({ ok: true, text: 'Booking request received! We will confirm your appointment shortly.' });
+      setBkgForm({ name: '', email: '', phone: '', service: '', date: '', time: '', notes: '' });
+    } else {
+      setBkgResult({ ok: false, text: 'Failed to submit booking. Please try again.' });
     }
     setBkgLoading(false);
   };

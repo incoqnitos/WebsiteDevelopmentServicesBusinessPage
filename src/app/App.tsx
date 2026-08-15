@@ -35,6 +35,7 @@ import ElectricLogo from './components/ElectricLogo';
 import PublicationsSection from './components/PublicationsSection';
 import OurClientsSection from './components/OurClientsSection';
 import TOZNavierStokesPage from './components/TOZNavierStokesPage';
+import ResearchPage from './components/ResearchPage';
 import ClientPortalPage from './components/ClientPortalPage';
 import AdminPanel from './components/AdminPanel';
 import { SEO, PAGE_SEO } from './components/SEO';
@@ -422,6 +423,20 @@ export default function App() {
         <Navigation />
         <main style={{ paddingTop: 96 }}>
           <Arhont1 />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  // Render Research & Publications profile page
+  if (currentPage === 'research-publications') {
+    return (
+      <div className="min-h-screen bg-slate-950">
+        <SEO {...PAGE_SEO['research-publications']} />
+        <Navigation />
+        <main style={{ paddingTop: 80 }}>
+          <ResearchPage />
         </main>
         <Footer />
       </div>

@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
-import { projectId, publicAnonKey } from '/utils/supabase/info';
-
-const API = `https://${projectId}.supabase.co/functions/v1/make-server-d0a1053e`;
+function saveMessage(data: object) {
+  const key = 'mitai_messages';
+  const existing = JSON.parse(localStorage.getItem(key) || '[]');
+  const id = `msg_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
+  existing.unshift({ id, ...data, status: 'unread', createdAt: new Date().toISOString() });
+  localStorage.setItem(key, JSON.stringify(existing));
+}
 
 export function ContactPage() {
   const isDark = true; // Dark theme only
@@ -39,21 +43,13 @@ export function ContactPage() {
   const handleSalesSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSalesLoading(true);
-    try {
-      await fetch(`${API}/messages`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${publicAnonKey}` },
-        body: JSON.stringify({
-          name: salesForm.name,
-          email: salesForm.email,
-          phone: '',
-          subject: `Sales – ${salesForm.interest}${salesForm.company ? ' | ' + salesForm.company : ''}${salesForm.budget ? ' | Budget: ' + salesForm.budget : ''}`,
-          message: salesForm.message,
-        }),
-      });
-    } catch (e) {
-      console.log('Sales submit error:', e);
-    }
+    saveMessage({
+      name: salesForm.name,
+      email: salesForm.email,
+      phone: '',
+      subject: `Sales – ${salesForm.interest}${salesForm.company ? ' | ' + salesForm.company : ''}${salesForm.budget ? ' | Budget: ' + salesForm.budget : ''}`,
+      message: salesForm.message,
+    });
     setSalesLoading(false);
     setSalesSubmitted(true);
     setTimeout(() => {
@@ -65,21 +61,13 @@ export function ContactPage() {
   const handleGeneralSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setGeneralLoading(true);
-    try {
-      await fetch(`${API}/messages`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${publicAnonKey}` },
-        body: JSON.stringify({
-          name: generalForm.name,
-          email: generalForm.email,
-          phone: '',
-          subject: generalForm.subject,
-          message: generalForm.message,
-        }),
-      });
-    } catch (e) {
-      console.log('General submit error:', e);
-    }
+    saveMessage({
+      name: generalForm.name,
+      email: generalForm.email,
+      phone: '',
+      subject: generalForm.subject,
+      message: generalForm.message,
+    });
     setGeneralLoading(false);
     setGeneralSubmitted(true);
     setTimeout(() => {
@@ -256,7 +244,7 @@ export function ContactPage() {
             <div style={{
               color: isDark ? '#cbd5e1' : '#64748b'
             }}>
-              Perustica 19, Burgas<br />Bulgaria
+              Schönauer Straße 6<br />68307 Mannheim, Germany
             </div>
           </div>
         </div>

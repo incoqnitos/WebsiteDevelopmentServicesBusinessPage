@@ -14,7 +14,7 @@ export function Footer() {
     company: [
       { label: 'About Us', href: '#about' },
       { label: 'Portfolio', href: '#portfolio' },
-      { label: 'Testimonials', href: '#testimonials' },
+      { label: 'Research & Publications', href: '#research-publications' },
       { label: 'Contact', href: '#contact' },
       { label: 'Client Portal', href: '#client-portal' },
     ],
