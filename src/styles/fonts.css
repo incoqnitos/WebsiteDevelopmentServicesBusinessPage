@@ -1,0 +1,6 @@
+/* MITAI type system — modern tech/AI stance
+   Sora        → display / headings (geometric, engineered feel)
+   Inter       → body / UI copy (highly legible across 6 languages)
+   JetBrains Mono → structural labels, specs, code, data
+   Michroma (in index.css) → brand wordmark only */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');

@@ -498,7 +498,7 @@ export default function LaptopConfigurator() {
                   <button
                     key={pack.key}
                     onClick={() => setConfig({ ...config, profile: pack.key, packPrice: pack.price })}
-                    className={`px-4 py-2 rounded-full border transition-all text-sm ${
+                    className={`px-4 py-2 rounded-full border transition-all text-sm text-white ${
                       config.profile === pack.key
                         ? 'border-[#7cf9ff] outline outline-2 outline-[#7cf9ff] bg-[#15213a]'
                         : 'border-[#1c2a47] bg-[#15213a] hover:border-[#7cf9ff]'
@@ -571,28 +571,28 @@ export default function LaptopConfigurator() {
 
             {/* Actions */}
             <div className="flex gap-3 flex-wrap pt-4">
-              <button onClick={fillBestPrices} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all">
+              <button onClick={fillBestPrices} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all text-white text-sm font-medium">
                 Fill Best Prices (DE)
               </button>
-              <button onClick={randomizeBuild} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all">
+              <button onClick={randomizeBuild} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all text-white text-sm font-medium">
                 Randomize Build
               </button>
-              <button onClick={searchAll} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all">
+              <button onClick={searchAll} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all text-white text-sm font-medium">
                 Search All (Geizhals + Amazon DE)
               </button>
-              <button onClick={saveConfig} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all">
+              <button onClick={saveConfig} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all text-white text-sm font-medium">
                 Save
               </button>
-              <button onClick={loadConfig} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all">
+              <button onClick={loadConfig} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all text-white text-sm font-medium">
                 Load
               </button>
-              <button onClick={copyJSON} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all">
+              <button onClick={copyJSON} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all text-white text-sm font-medium">
                 Copy Quote (JSON)
               </button>
-              <button onClick={() => window.print()} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all">
+              <button onClick={() => window.print()} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all text-white text-sm font-medium">
                 Print / PDF
               </button>
-              <button onClick={() => window.location.reload()} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all">
+              <button onClick={() => window.location.reload()} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all text-white text-sm font-medium">
                 Reset
               </button>
             </div>
@@ -601,7 +601,7 @@ export default function LaptopConfigurator() {
             <details className="pt-4">
               <summary className="cursor-pointer text-[#7cf9ff] hover:underline">Run self-tests</summary>
               <div className="mt-4 space-y-3">
-                <button onClick={runTests} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all">
+                <button onClick={runTests} className="px-4 py-2 bg-gradient-to-b from-[#162240] to-[#0e1830] border border-[#1c2a47] rounded-xl hover:bg-slate-700 transition-all text-white text-sm font-medium">
                   Run Tests
                 </button>
                 {testResults && (
@@ -705,7 +705,7 @@ function ConfigRow({
           href={geizhalsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-3 py-2 bg-[#15213a] border border-[#1c2a47] rounded-full text-xs hover:bg-[#172446] transition-colors"
+          className="px-3 py-2 bg-[#15213a] border border-[#1c2a47] rounded-full text-xs text-cyan-300 hover:bg-[#172446] transition-colors"
         >
           Geizhals
         </a>
@@ -713,7 +713,7 @@ function ConfigRow({
           href={amazonUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-3 py-2 bg-[#15213a] border border-[#1c2a47] rounded-full text-xs hover:bg-[#172446] transition-colors"
+          className="px-3 py-2 bg-[#15213a] border border-[#1c2a47] rounded-full text-xs text-cyan-300 hover:bg-[#172446] transition-colors"
         >
           Amazon DE
         </a>
@@ -729,14 +729,14 @@ function ConfigRow({
         />
         <button
           onClick={onRealClick}
-          className="px-2 py-1 bg-[#15213a] border border-[#1c2a47] rounded-lg text-xs hover:bg-[#172446] transition-colors"
+          className="px-2 py-1 bg-[#15213a] border border-[#1c2a47] rounded-lg text-xs text-cyan-300 hover:bg-[#172446] transition-colors"
           title={`Real price: ${fmt(realPrice)}`}
         >
           Real ({fmt(realPrice)})
         </button>
         <button
           onClick={onRandomClick}
-          className="px-2 py-1 bg-[#15213a] border border-[#1c2a47] rounded-lg text-xs hover:bg-[#172446] transition-colors"
+          className="px-2 py-1 bg-[#15213a] border border-[#1c2a47] rounded-lg text-xs text-cyan-300 hover:bg-[#172446] transition-colors"
           title={`Random price around ${fmt(randomPrice)}`}
         >
           Random ({fmt(randomPrice)})
